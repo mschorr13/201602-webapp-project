@@ -6,6 +6,34 @@ from flask import Flask, render_template, send_from_directory
 app = Flask(__name__)
 
 # FIXME write your app below
+def get_data():
+    class_list = []
+    with open('counts.tsv') as fd:
+        for line in fd.read().splitlines():
+            class_data = line.split("\t")
+            class_list.append(class_data)
+        return class_list
+
+class Course:
+    def __init__(self, year, season, department, number, section, title, units, instructors, meetings, core, seats, enrolled, reserved, reserved_open, waitlisted):
+        self.year = year
+        self.season = season
+        self.department = department
+        self.number = number
+        self.section = section
+        self.title = title
+        self.units = units
+        self.instructors = instructors
+        self.meetings = meetings
+        self.core = core
+        self.seats = seats
+        self.enrolled = enrolled
+        self.reserved = reserved
+        self.reserved_open = reserved_open
+        self.waitlisted = waitlisted
+
+
+
 
 @app.route('/')
 def view_root():
@@ -27,5 +55,6 @@ def get_js(file):
     return send_from_directory('js', file)
 
 if __name__ == '__main__':
+    print(get_data())
     chdir(dirname(realpath(__file__)))
     app.run(debug=True)
