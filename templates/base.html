@@ -9,6 +9,9 @@
 </head>
 <body>
     <img src="/images/oxy-seal.png" style="width:150px; height:150px;">
-    My Course Counts
+    My Course Counts (Suggestion, use command+f) (suggestion #2, don't actually click the links)
+     {% for course in courses %}
+    <p><a href="/directory/{{ course.department }}">{{ course.year }} {{ course.season }} {{ course.department }} {{ course.number }} {{ course.section }} {{ course.title }} {{ course.users }} {{ course.instructors }} {{ course.meetings }} {{ course.core }} {{ course.seats }} {{ course.enrolled }} {{ course.reserved }} {{ course.reserved_open }} {{ course.waitlisted }}</a></p>
+    {% endfor %}
 </body>
 </html>

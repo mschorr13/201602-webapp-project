@@ -8,10 +8,12 @@ app = Flask(__name__)
 # FIXME write your app below
 def get_data():
     class_list = []
+    num = 0
     with open('counts.tsv') as fd:
         for line in fd.read().splitlines():
             class_data = line.split("\t")
-            class_list.append(class_data)
+            new_course = Course(*class_data)
+            class_list.append(new_course)
         return class_list
 
 class Course:
@@ -33,11 +35,10 @@ class Course:
         self.waitlisted = waitlisted
 
 
-
-
 @app.route('/')
-def view_root():
-    return render_template('base.html')
+def display_full_courses():
+    courses = get_data()
+    return render_template('base.html', courses=courses)
 
 # The functions below lets you access files in the css, js, and images folders.
 # You should not change them unless you know what you are doing.
@@ -55,6 +56,6 @@ def get_js(file):
     return send_from_directory('js', file)
 
 if __name__ == '__main__':
-    print(get_data())
+    #print(get_data())
     chdir(dirname(realpath(__file__)))
     app.run(debug=True)
