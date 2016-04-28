@@ -8,10 +8,34 @@
     <script src="/js/main.js"></script>
 </head>
 <body>
-    <img src="/images/oxy-seal.png" style="width:150px; height:150px;">
+    <div class="head green">
+        <img src="/images/oxy-seal.png" style="width:150px; height:150px; float:left;">
+        <font size="10" face="Arial"><i><center>What core requirement must you fill?</center></i></font>
+    </div>
+    <div class="box silver">
+        <a style="text-decoration:none;" href="/CPAF"><font size="6" face="Arial"><center>Core Africa & the Middle East</center></font></a>
+        <p><a style="text-decoration:none;" href="/CPAS"><font size="6" face="Arial"><center>Core Central/South/East Asia</center></font></a></p>
+        <p><a style="text-decoration:none;" href="/CPEU"><font size="6" face="Arial"><center>Core Europe</center></font></a></p>
+        <p><a style="text-decoration:none;" href="/CPFA"><font size="6" face="Arial"><center>Core Fine Arts</center></font></a></p>
+        <p><a style="text-decoration:none;" href="/CFAP"><font size="6" face="Arial"><center>Core Fine Arts Partial</center></font></a></p>
+        <p><a style="text-decoration:none;" href="/CPGC"><font size="6" face="Arial"><center>Core Global Connections</center></font></a></p>
+        <p><a style="text-decoration:none;" href="/CPIC"><font size="6" face="Arial"><center>Core Intercultural</center></font></a></p>
+        <p><a style="text-decoration:none;" href="/CPLS"><font size="6" face="Arial"><center>Core Laboratory Science</center></font></a></p>
+        <p><a style="text-decoration:none;" href="/CPLA"><font size="6" face="Arial"><center>Core Latin America</center></font></a></p>
+        <p><a style="text-decoration:none;" href="/CPMS"><font size="6" face="Arial"><center>Core Mathematics/Science</center></font></a></p>
+        <p><a style="text-decoration:none;" href="/CPEE"><font size="6" face="Arial"><center>Core Pre-1800</center></font></a></p>
+        <p><a style="text-decoration:none;" href="/CPRF"><font size="6" face="Arial"><center>Core Regional Focus</center></font></a></p>
+        <p><a style="text-decoration:none;" href="/CPUS"><font size="6" face="Arial"><center>Core United States</center></font></a></p>
+        <p><a style="text-decoration:none;" href="/CPUD"><font size="6" face="Arial"><center>Core United States Diversity</center></font></a></p>
+        <p><a style="text-decoration:none;" href="/CUSP"><font size="6" face="Arial"><center>Core United States Partial</center></font></a></p>
+    </div>
+
+
+    <!--
     My Course Counts (Suggestion, use command+f) (suggestion #2, don't actually click the links)
-     {% for course in courses %}
+    {% for course in courses %}
     <p><a href="/directory/{{ course.department }}">{{ course.year }} {{ course.season }} {{ course.department }} {{ course.number }} {{ course.section }} {{ course.title }} {{ course.users }} {{ course.instructors }} {{ course.meetings }} {{ course.core }} {{ course.seats }} {{ course.enrolled }} {{ course.reserved }} {{ course.reserved_open }} {{ course.waitlisted }}</a></p>
     {% endfor %}
+    -->
 </body>
 </html>
