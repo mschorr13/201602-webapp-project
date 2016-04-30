@@ -71,98 +71,290 @@ def display_full_courses():
 @app.route('/CPAF')
 def display_random_CPAF():
     courses = get_fall_2016_core('CPAF')
-    course = random.choice(courses)
-    return render_template('courses.html', courses=course)
+    list_of_three = []
+    course1 = random.choice(courses)
+    for i in range(10):
+        course2 = random.choice(courses)
+        if course2[5] != course1[5]:
+            break
+    for i in range(10):
+        course3 = random.choice(courses)
+        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+            break
+    list_of_three.append(course1)
+    list_of_three.append(course2)
+    list_of_three.append(course3)
+    return render_template('courses.html', courses=list_of_three)
 
 @app.route('/CPAS')
 def display_random_CPAS():
     courses = get_fall_2016_core('CPAS')
-    course = random.choice(courses)
-    return render_template('courses.html', courses=course)
+    list_of_three = []
+    course1 = random.choice(courses)
+    for i in range(10):
+        course2 = random.choice(courses)
+        if course2[5] != course1[5]:
+            break
+    for i in range(10):
+        course3 = random.choice(courses)
+        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+            break
+    list_of_three.append(course1)
+    list_of_three.append(course2)
+    list_of_three.append(course3)
+    return render_template('courses.html', courses=list_of_three)
 
 @app.route('/CPEU')
 def display_random_CPEU():
     courses = get_fall_2016_core('CPEU')
-    course = random.choice(courses)
-    return render_template('courses.html', courses=course)
+    list_of_three = []
+    course1 = random.choice(courses)
+    for i in range(10):
+        course2 = random.choice(courses)
+        if course2[5] != course1[5]:
+            break
+    for i in range(10):
+        course3 = random.choice(courses)
+        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+            break
+    list_of_three.append(course1)
+    list_of_three.append(course2)
+    list_of_three.append(course3)
+    return render_template('courses.html', courses=list_of_three)
 
 @app.route('/CPFA')
 def display_random_CPFA():
     courses = get_fall_2016_core('CPFA')
-    course = random.choice(courses)
-    return render_template('courses.html', courses=course)
+    list_of_three = []
+    course1 = random.choice(courses)
+    for i in range(10):
+        course2 = random.choice(courses)
+        if course2[5] != course1[5]:
+            break
+    for i in range(10):
+        course3 = random.choice(courses)
+        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+            break
+    list_of_three.append(course1)
+    list_of_three.append(course2)
+    list_of_three.append(course3)
+    return render_template('courses.html', courses=list_of_three)
 
 @app.route('/CPAP')
 def display_random_CPAP():
     courses = get_fall_2016_core('CPAP')
-    course = random.choice(courses)
-    return render_template('courses.html', courses=course)
+    list_of_three = []
+    course1 = random.choice(courses)
+    for i in range(10):
+        course2 = random.choice(courses)
+        if course2[5] != course1[5]:
+            break
+    for i in range(10):
+        course3 = random.choice(courses)
+        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+            break
+    list_of_three.append(course1)
+    list_of_three.append(course2)
+    list_of_three.append(course3)
+    return render_template('courses.html', courses=list_of_three)
 
 @app.route('/CFAP')
 def display_random_CFAP():
     courses = get_fall_2016_core('CFAP')
-    course = random.choice(courses)
-    return render_template('courses.html', courses=course)
+    list_of_three = []
+    course1 = random.choice(courses)
+    for i in range(10):
+        course2 = random.choice(courses)
+        if course2[5] != course1[5]:
+            break
+    for i in range(10):
+        course3 = random.choice(courses)
+        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+            break
+    list_of_three.append(course1)
+    list_of_three.append(course2)
+    list_of_three.append(course3)
+    return render_template('courses.html', courses=list_of_three)
 
 @app.route('/CPGC')
 def display_random_CPGC():
     courses = get_fall_2016_core('CPGC')
-    course = random.choice(courses)
-    return render_template('courses.html', courses=course)
+    list_of_three = []
+    course1 = random.choice(courses)
+    for i in range(10):
+        course2 = random.choice(courses)
+        if course2[5] != course1[5]:
+            break
+    for i in range(10):
+        course3 = random.choice(courses)
+        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+            break
+    list_of_three.append(course1)
+    list_of_three.append(course2)
+    list_of_three.append(course3)
+    return render_template('courses.html', courses=list_of_three)
 
 @app.route('/CPIC')
 def display_random_CPIC():
     courses = get_fall_2016_core('CPIC')
-    course = random.choice(courses)
-    return render_template('courses.html', courses=course)
+    list_of_three = []
+    course1 = random.choice(courses)
+    for i in range(10):
+        course2 = random.choice(courses)
+        if course2[5] != course1[5]:
+            break
+    for i in range(10):
+        course3 = random.choice(courses)
+        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+            break
+    list_of_three.append(course1)
+    list_of_three.append(course2)
+    list_of_three.append(course3)
+    return render_template('courses.html', courses=list_of_three)
 
 @app.route('/CPLS')
 def display_random_CPLS():
     courses = get_fall_2016_core('CPLS')
-    course = random.choice(courses)
-    return render_template('courses.html', courses=course)
+    list_of_three = []
+    course1 = random.choice(courses)
+    for i in range(10):
+        course2 = random.choice(courses)
+        if course2[5] != course1[5]:
+            break
+    for i in range(10):
+        course3 = random.choice(courses)
+        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+            break
+    list_of_three.append(course1)
+    list_of_three.append(course2)
+    list_of_three.append(course3)
+    return render_template('courses.html', courses=list_of_three)
 
 @app.route('/CPLA')
 def display_random_CPLA():
     courses = get_fall_2016_core('CPLA')
-    course = random.choice(courses)
-    return render_template('courses.html', courses=course)
+    list_of_three = []
+    course1 = random.choice(courses)
+    for i in range(10):
+        course2 = random.choice(courses)
+        if course2[5] != course1[5]:
+            break
+    for i in range(10):
+        course3 = random.choice(courses)
+        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+            break
+    list_of_three.append(course1)
+    list_of_three.append(course2)
+    list_of_three.append(course3)
+    return render_template('courses.html', courses=list_of_three)
 
 @app.route('/CPMS')
 def display_random_CPMS():
     courses = get_fall_2016_core('CPMS')
-    course = random.choice(courses)
-    return render_template('courses.html', courses=course)
+    list_of_three = []
+    course1 = random.choice(courses)
+    for i in range(10):
+        course2 = random.choice(courses)
+        if course2[5] != course1[5]:
+            break
+    for i in range(10):
+        course3 = random.choice(courses)
+        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+            break
+    list_of_three.append(course1)
+    list_of_three.append(course2)
+    list_of_three.append(course3)
+    return render_template('courses.html', courses=list_of_three)
 
 @app.route('/CPPE')
 def display_random_CPPE():
     courses = get_fall_2016_core('CPPE')
-    course = random.choice(courses)
-    return render_template('courses.html', courses=course)
+    list_of_three = []
+    course1 = random.choice(courses)
+    for i in range(10):
+        course2 = random.choice(courses)
+        if course2[5] != course1[5]:
+            break
+    for i in range(10):
+        course3 = random.choice(courses)
+        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+            break
+    list_of_three.append(course1)
+    list_of_three.append(course2)
+    list_of_three.append(course3)
+    return render_template('courses.html', courses=list_of_three)
 
 @app.route('/CPRF')
 def display_random_CPRF():
     courses = get_fall_2016_core('CPRF')
-    course = random.choice(courses)
-    return render_template('courses.html', courses=course)
+    list_of_three = []
+    course1 = random.choice(courses)
+    for i in range(10):
+        course2 = random.choice(courses)
+        if course2[5] != course1[5]:
+            break
+    for i in range(10):
+        course3 = random.choice(courses)
+        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+            break
+    list_of_three.append(course1)
+    list_of_three.append(course2)
+    list_of_three.append(course3)
+    return render_template('courses.html', courses=list_of_three)
 
 @app.route('/CPUS')
 def display_random_CPUS():
     courses = get_fall_2016_core('CPUS')
-    course = random.choice(courses)
-    return render_template('courses.html', courses=course)
+    list_of_three = []
+    course1 = random.choice(courses)
+    for i in range(10):
+        course2 = random.choice(courses)
+        if course2[5] != course1[5]:
+            break
+    for i in range(10):
+        course3 = random.choice(courses)
+        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+            break
+    list_of_three.append(course1)
+    list_of_three.append(course2)
+    list_of_three.append(course3)
+    return render_template('courses.html', courses=list_of_three)
 
 @app.route('/CPUD')
 def display_random_CPUD():
     courses = get_fall_2016_core('CPUD')
-    course = random.choice(courses)
-    return render_template('courses.html', courses=course)
+    list_of_three = []
+    course1 = random.choice(courses)
+    for i in range(10):
+        course2 = random.choice(courses)
+        if course2[5] != course1[5]:
+            break
+    for i in range(10):
+        course3 = random.choice(courses)
+        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+            break
+    list_of_three.append(course1)
+    list_of_three.append(course2)
+    list_of_three.append(course3)
+    return render_template('courses.html', courses=list_of_three)
 
 @app.route('/CUSP')
 def display_random_CUSP():
     courses = get_fall_2016_core('CUSP')
-    course = random.choice(courses)
-    return render_template('courses.html', courses=course)
+    list_of_three = []
+    course1 = random.choice(courses)
+    for i in range(10):
+        course2 = random.choice(courses)
+        if course2[5] != course1[5]:
+            break
+    for i in range(10):
+        course3 = random.choice(courses)
+        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+            break
+    list_of_three.append(course1)
+    list_of_three.append(course2)
+    list_of_three.append(course3)
+    return render_template('courses.html', courses=list_of_three)
 
 # The functions below lets you access files in the css, js, and images folders.
 # You should not change them unless you know what you are doing.
