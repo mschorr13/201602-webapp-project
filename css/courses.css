@@ -8,3 +8,7 @@ p {font-color:#000000;
       font-size:200%;
       font-family:"Arial Black", Gadget, sans-serif;
       }
+.outline {
+    outline: #ffc266 dotted thick;
+
+}

@@ -134,9 +134,9 @@ def display_random_CPMS():
     course = random.choice(courses)
     return render_template('courses.html', courses=course)
 
-@app.route('/CPEE')
-def display_random_CPEE():
-    courses = get_fall_2016_core('CPEE')
+@app.route('/CPPE')
+def display_random_CPPE():
+    courses = get_fall_2016_core('CPPE')
     course = random.choice(courses)
     return render_template('courses.html', courses=course)
 
