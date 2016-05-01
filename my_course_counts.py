@@ -6,8 +6,6 @@ from flask import Flask, render_template, send_from_directory
 
 app = Flask(__name__)
 
-# FIXME write your app below
-
 
 # gets list of list of all classes
 def get_data():
@@ -15,7 +13,6 @@ def get_data():
     with open('counts.tsv') as fd:
         for line in fd.read().splitlines():
             class_data = line.split("\t")
-            #new_course = Course(*class_data)
             class_list.append(class_data)
         return class_list
 
@@ -40,47 +37,27 @@ def get_fall_2016_core(core):
             core_satisfied_list.append(n)
     return core_satisfied_list
 
-class Course:
-    def __init__(self, year, season, department, number, section, title, units, instructors, meetings, core, seats, enrolled, reserved, reserved_open, waitlisted):
-        self.year = year
-        self.season = season
-        self.department = department
-        self.number = number
-        self.section = section
-        self.title = title
-        self.units = units
-        self.instructors = instructors
-        self.meetings = meetings
-        self.core = core
-        self.seats = seats
-        self.enrolled = enrolled
-        self.reserved = reserved
-        self.reserved_open = reserved_open
-        self.waitlisted = waitlisted
-    def __str__(self):
-        pass
-
-
-
 
 @app.route('/')
 def display_full_courses():
     courses = get_data()
     return render_template('base.html', courses=courses)
 
+#  All of the remaining functions display website with 3 (different) random classes that satisfy specified core requirement
+
 @app.route('/CPAF')
 def display_random_CPAF():
     courses = get_fall_2016_core('CPAF')
     list_of_three = []
     course1 = random.choice(courses)
-    for i in range(10):
+    for i in range(10):  # ensures second course is different from first one
         course2 = random.choice(courses)
         if course2[5] != course1[5]:
-            break
-    for i in range(10):
+            break  # if course titles are different, keep course 2. if not, try again
+    for i in range(10):  # ensures third course is different from first and second
         course3 = random.choice(courses)
-        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
-            break
+        if (course3[5] != course1[5]) and (course3[5] != course2[5]):
+            break  # if course titles are different, keep course 3. if not, try again
     list_of_three.append(course1)
     list_of_three.append(course2)
     list_of_three.append(course3)
@@ -97,7 +74,7 @@ def display_random_CPAS():
             break
     for i in range(10):
         course3 = random.choice(courses)
-        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+        if (course3[5] != course1[5]) and (course3[5] != course2[5]):
             break
     list_of_three.append(course1)
     list_of_three.append(course2)
@@ -115,7 +92,7 @@ def display_random_CPEU():
             break
     for i in range(10):
         course3 = random.choice(courses)
-        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+        if (course3[5] != course1[5]) and (course3[5] != course2[5]):
             break
     list_of_three.append(course1)
     list_of_three.append(course2)
@@ -133,7 +110,7 @@ def display_random_CPFA():
             break
     for i in range(10):
         course3 = random.choice(courses)
-        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+        if (course3[5] != course1[5]) and (course3[5] != course2[5]):
             break
     list_of_three.append(course1)
     list_of_three.append(course2)
@@ -151,7 +128,7 @@ def display_random_CPAP():
             break
     for i in range(10):
         course3 = random.choice(courses)
-        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+        if (course3[5] != course1[5]) and (course3[5] != course2[5]):
             break
     list_of_three.append(course1)
     list_of_three.append(course2)
@@ -169,7 +146,7 @@ def display_random_CFAP():
             break
     for i in range(10):
         course3 = random.choice(courses)
-        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+        if (course3[5] != course1[5]) and (course3[5] != course2[5]):
             break
     list_of_three.append(course1)
     list_of_three.append(course2)
@@ -187,7 +164,7 @@ def display_random_CPGC():
             break
     for i in range(10):
         course3 = random.choice(courses)
-        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+        if (course3[5] != course1[5]) and (course3[5] != course2[5]):
             break
     list_of_three.append(course1)
     list_of_three.append(course2)
@@ -205,7 +182,7 @@ def display_random_CPIC():
             break
     for i in range(10):
         course3 = random.choice(courses)
-        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+        if (course3[5] != course1[5]) and (course3[5] != course2[5]):
             break
     list_of_three.append(course1)
     list_of_three.append(course2)
@@ -223,7 +200,7 @@ def display_random_CPLS():
             break
     for i in range(10):
         course3 = random.choice(courses)
-        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+        if (course3[5] != course1[5]) and (course3[5] != course2[5]):
             break
     list_of_three.append(course1)
     list_of_three.append(course2)
@@ -241,7 +218,7 @@ def display_random_CPLA():
             break
     for i in range(10):
         course3 = random.choice(courses)
-        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+        if (course3[5] != course1[5]) and (course3[5] != course2[5]):
             break
     list_of_three.append(course1)
     list_of_three.append(course2)
@@ -259,7 +236,7 @@ def display_random_CPMS():
             break
     for i in range(10):
         course3 = random.choice(courses)
-        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+        if (course3[5] != course1[5]) and (course3[5] != course2[5]):
             break
     list_of_three.append(course1)
     list_of_three.append(course2)
@@ -277,7 +254,7 @@ def display_random_CPPE():
             break
     for i in range(10):
         course3 = random.choice(courses)
-        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+        if (course3[5] != course1[5]) and (course3[5] != course2[5]):
             break
     list_of_three.append(course1)
     list_of_three.append(course2)
@@ -295,7 +272,7 @@ def display_random_CPRF():
             break
     for i in range(10):
         course3 = random.choice(courses)
-        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+        if (course3[5] != course1[5]) and (course3[5] != course2[5]):
             break
     list_of_three.append(course1)
     list_of_three.append(course2)
@@ -313,7 +290,7 @@ def display_random_CPUS():
             break
     for i in range(10):
         course3 = random.choice(courses)
-        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+        if (course3[5] != course1[5]) and (course3[5] != course2[5]):
             break
     list_of_three.append(course1)
     list_of_three.append(course2)
@@ -331,7 +308,7 @@ def display_random_CPUD():
             break
     for i in range(10):
         course3 = random.choice(courses)
-        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+        if (course3[5] != course1[5]) and (course3[5] != course2[5]):
             break
     list_of_three.append(course1)
     list_of_three.append(course2)
@@ -349,7 +326,7 @@ def display_random_CUSP():
             break
     for i in range(10):
         course3 = random.choice(courses)
-        if (course3[5] !=course1[5]) and (course3[5] != course2[5]):
+        if (course3[5] != course1[5]) and (course3[5] != course2[5]):
             break
     list_of_three.append(course1)
     list_of_three.append(course2)
@@ -372,7 +349,4 @@ def get_js(file):
     return send_from_directory('js', file)
 
 if __name__ == '__main__':
-    #print(get_data())
-    #print(get_fall_2016())
-    #print(get_fall_2016_core('CPUD'))
     app.run(debug=True)
